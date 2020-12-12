@@ -310,9 +310,25 @@ img {
   display: block;
   width: calc((100% - 60px) / 3);
   margin-right: 30px;
+
+  position: relative;
 }
 .examples-list .item:last-child {
   margin-right: 0px;
+}
+.examples h3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 370px;
+  height: 70px;
+
+  color: var(--additional-color);
+  background-color: rgba(47, 48, 58, 0.8);
 }
 /* Team */
 .team {
@@ -564,17 +580,60 @@ address a {
   margin-bottom: 0px;
 }
 .project-list a {
+  position: relative;
   display: block;
   width: 100%;
-  overflow: hidden;
 
-  border: 1px solid #eeeeee;
   background-color: var(--additional-color);
 }
 .project-list a:hover,
 .project-list a:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.project-list a::before {
+  display: inline-block;
+  position: absolute;
+  content: "";
+  width: 370px;
+  height: 294px;
+  top: 0;
+  left: 0;
+
+  opacity: 0;
+  background-color: rgba(33, 150, 243, 0.9);
+}
+
+.project-thumb-text {
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 322px; */
+  /* height: 294px; */
+
+  padding-top: 63px;
+  padding-right: 24px;
+  padding-bottom: 63px;
+  padding-left: 24px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+
+  color: #ffffff;
+  background-color: rgba(33, 150, 243, 0.9);
+  opacity: 0;
+}
+.project-list a:hover::before,
+.project-list a:focus::before,
+.project-list a:hover p,
+.project-list a:focus p {
+  opacity: 1;
 }
 .project-info {
   padding-top: 20px;
@@ -583,6 +642,10 @@ address a {
   padding-left: 24px;
 
   background-color: var(--additional-color);
+
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee;
 
   text-align: left;
 }
