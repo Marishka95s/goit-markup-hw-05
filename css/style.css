@@ -114,18 +114,6 @@ img {
 .site-nav .selected-page {
   color: var(--accent-color);
 }
-.selected-page::after {
-  display: block;
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 4px;
-  width: 100%;
-  height: 4px;
-
-  background: var(--accent-color);
-  border-radius: 2px;
-}
 
 /* Site nav */
 .navigation {
@@ -169,7 +157,18 @@ img {
 
   color: var(--accent-color);
 }
+.selected-page::after {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 100%;
+  height: 4px;
 
+  background: var(--accent-color);
+  border-radius: 2px;
+}
 /* Contact nav */
 .contact-nav {
   display: flex;
@@ -407,12 +406,6 @@ img {
   border: 1px solid #afb1b8;
   border-radius: 4px;
 }
-.thumb-clients:hover,
-.thumb-clients:focus {
-  --color4: var(--accent-color);
-  border: 1px solid var(--accent-color);
-  border-radius: 4px;
-}
 .clients-list {
   display: flex;
   flex-wrap: wrap;
@@ -426,6 +419,14 @@ img {
 }
 .clients-list .item:last-child {
   margin-right: 0px;
+}
+.clients-list a:hover,
+.clients-list a:focus,
+.thumb-clients:hover,
+.thumb-clients:focus {
+  --color4: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
 }
 
 /* Footer */
@@ -454,6 +455,8 @@ footer {
   justify-content: space-between;
   margin-top: 20px;
   padding: 0;
+
+  --color4: var(--additional-color);
 }
 .contact-nav-footer {
   margin-top: 20px;
@@ -526,10 +529,8 @@ address a {
   text-align: center;
   letter-spacing: 0.03em;
 }
-.filter-list li:hover,
-.filter-list li:focus,
-.button:hover,
-.button:focus {
+.filter-list button:hover,
+.filter-list button:focus {
   background-color: var(--accent-color);
   color: var(--additional-color);
   border-radius: 4px;
@@ -537,7 +538,6 @@ address a {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   cursor: pointer;
-  outline: none;
 }
 /* Preparation to the project-border*/
 .project-list {
@@ -555,7 +555,6 @@ address a {
   margin-right: 30px;
   margin-bottom: 30px;
 
-  border: 1px solid #eeeeee;
   box-sizing: border-box;
 }
 .project-list .item:nth-child(3n) {
@@ -568,11 +567,12 @@ address a {
   display: block;
   width: 100%;
   overflow: hidden;
+
+  border: 1px solid #eeeeee;
   background-color: var(--additional-color);
 }
 .project-list a:hover,
 .project-list a:focus {
-  outline: none;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
