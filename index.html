@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <!-- Верхняя линия-->
+    <!-- Шапка-->
     <header>
       <nav class="container navigation">  
         <a href="./index.html">
@@ -37,12 +37,41 @@
     </header>
 
    <main>
-    <!-- Шапка-->
+    <!-- Герой-->
     <section>
         <div class="container hero">
         <h1 class="hero-title">Эффективные решения <br> для вашего бизнеса</h1>
-        <button type="button" class="hero-button">Заказать услугу</button>
+        <button data-open-modal type="button" class="hero-button">Заказать услугу</button>
         </div>
+        <div class="backdrop is-hidden" data-backdrop>
+            <div class="modal">
+                <button data-close-modal class="modal-close-svg">            
+                    <svg width="18" height="18">
+                        <use href="./images/sprite.svg#close-black"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <script>
+            const refs = {
+                openModalBtn: document.querySelector("[data-open-modal]"),
+                closeModalBtn: document.querySelector("[data-close-modal]"),
+                backdrop: document.querySelector("[data-backdrop]"),
+            };
+
+            refs.openModalBtn.addEventListener("click", toggleModal);
+            refs.closeModalBtn.addEventListener("click", toggleModal);
+
+            refs.backdrop.addEventListener("click", logBackdropClick);
+
+            function toggleModal() {
+                refs.backdrop.classList.toggle("is-hidden");
+            }
+             
+            function logBackdropClick() {
+                    console.log("Это клик в бекдроп");
+            }
+        </script>
     </section>
     
     <!-- Особенности-->
